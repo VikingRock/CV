@@ -15,10 +15,10 @@ var gulp = require('gulp'),
     clean = require('gulp-clean');
 
 var jsLibs = [
-  './bower_components/moment/min/moment-with-locales.min.js',
+  /*'./bower_components/moment/min/moment-with-locales.min.js',
   './bower_components/tap/dist/tap.min.js',
   './bower_components/mustache.js/mustache.min.js',
-  './source/js/*.js'
+  './source/js/*.js'*/
 ];
 
 var imageArr = [
@@ -104,7 +104,7 @@ gulp.task('watch', function() {
   gulp.watch(['./source/*.html'], ['html']);
 });
 
-// gulp  (собираем проект и запускаем watch)
+// gulp  (building project and starting watch)
 gulp.task('default', function() {
   runSequence(
     'clean',
@@ -116,6 +116,3 @@ gulp.task('default', function() {
     'watch'
   );
 });
-
-// Оставьте эту строку в самом конце файла
-require('./.gosha');

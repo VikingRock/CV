@@ -17,8 +17,9 @@ var gulp = require('gulp'),
 var jsLibs = [
   /*'./bower_components/moment/min/moment-with-locales.min.js',
   './bower_components/tap/dist/tap.min.js',
-  './bower_components/mustache.js/mustache.min.js',
-  './source/js/*.js'*/
+  './bower_components/mustache.js/mustache.min.js',*/
+  './source/js/modules/*.js',
+  './source/js/main.js'
 ];
 
 var imageArr = [

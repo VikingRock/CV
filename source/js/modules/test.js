@@ -3,7 +3,7 @@ var TestModule = (function () {
   var privateVariable = 1;
 
   function privateMethod() {
-    // ...
+    return privateVariable++;
   }
 
   my.moduleProperty = 1;

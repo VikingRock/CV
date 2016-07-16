@@ -91,7 +91,7 @@ gulp.task('images', function() {
 // watch
 gulp.task('watch', function() {
   gulp.watch('./source/less/**/*.less', ['style']);
-  gulp.watch('./source/js/*.js', ['scripts']);
+  gulp.watch('./source/js/**/*.js', ['scripts']);
   gulp.watch(['./source/*.html'], ['html']);
 });
 

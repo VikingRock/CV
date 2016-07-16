@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
     minify = require("gulp-clean-css"),
     uglify = require('gulp-uglify'),
-    imageop = require('gulp-image-optimization'),
+    imagemin = require('gulp-imagemin'),
     clean = require('gulp-clean');
 
 var jsLibs = [
@@ -20,13 +20,6 @@ var jsLibs = [
   './bower_components/mustache.js/mustache.min.js',*/
   './source/js/modules/*.js',
   './source/js/main.js'
-];
-
-var imageArr = [
-  './source/img/**/*.png',
-  './source/img/**/*.jpg',
-  './source/img/**/*.jpeg',
-  './source/img/**/*.gif'
 ];
 
 //clean build
@@ -45,7 +38,7 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('./build/font'));
 });
 
-// Web server
+// web server
 gulp.task('connect', function() {
   connect.server({
     root:'./build/',
@@ -89,13 +82,10 @@ gulp.task('scripts', function() {
 });
 
 //images
-gulp.task('images', function(cb) {
-  gulp.src(imageArr).pipe(imageop({
-    optimizationLevel: 3,
-    progressive: true,
-    interlaced: true
-  }))
-    .pipe(gulp.dest('./build/img')).on('end', cb).on('error', cb);
+gulp.task('images', function() {
+  gulp.src('source/img/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('build/img'))
 });
 
 // watch

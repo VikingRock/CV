@@ -76,6 +76,9 @@ gulp.task('scripts', function() {
   return gulp.src('./source/js/main.js')
     .pipe(webpack( require('./webpack.config.js') ))
     .pipe(gulp.dest('./build/js'))
+    .pipe(uglify())
+    .pipe(rename('main.min.js'))
+    .pipe(gulp.dest('./build/js/'))
     .pipe(connect.reload());
 });
 

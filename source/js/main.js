@@ -1,1 +1,4 @@
-console.log(TestModule.moduleMethod());
+'use strict';
+
+require('test');
+require('use-test');

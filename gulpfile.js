@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     minify = require("gulp-clean-css"),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
+    webpack = require('webpack-stream'),
     clean = require('gulp-clean');
 
 var jsLibs = [
@@ -72,13 +73,9 @@ gulp.task('style', function() {
 
 //js build
 gulp.task('scripts', function() {
-  return gulp.src(jsLibs)
-    .pipe(concat('script.js'))
-    .pipe(gulp.dest('./build/js/'))
-    .pipe(uglify())
-    .pipe(rename('script.min.js'))
-    .pipe(gulp.dest('./build/js/'));
-    //.pipe(connect.reload());
+  return gulp.src('./source/js/main.js')
+    .pipe(webpack( require('./webpack.config.js') ))
+    .pipe(gulp.dest('./build/js'));
 });
 
 //images

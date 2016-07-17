@@ -43,7 +43,7 @@ gulp.task('copy', function () {
 gulp.task('connect', function() {
   connect.server({
     root:'./build/',
-    livereload: false,
+    livereload: true,
     port: 8080
   });
 });
@@ -52,8 +52,8 @@ gulp.task('connect', function() {
 gulp.task('html', function () {
   gulp.src('./source/*.html')
     .pipe(gulp.dest('./build/'));
- gulp.src('./build/*.html');
-    //.pipe(connect.reload());
+ gulp.src('./build/*.html')
+    .pipe(connect.reload());
 });
 
 // css
@@ -67,15 +67,16 @@ gulp.task('style', function() {
     .pipe(gulp.dest('./build/css'))
     .pipe(minify())
     .pipe(rename("style.min.css"))
-    .pipe(gulp.dest('./build/css'));
-    //.pipe(connect.reload());
+    .pipe(gulp.dest('./build/css'))
+    .pipe(connect.reload());
 });
 
 //js build
 gulp.task('scripts', function() {
   return gulp.src('./source/js/main.js')
     .pipe(webpack( require('./webpack.config.js') ))
-    .pipe(gulp.dest('./build/js'));
+    .pipe(gulp.dest('./build/js'))
+    .pipe(connect.reload());
 });
 
 //images

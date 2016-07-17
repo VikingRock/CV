@@ -1,7 +1,7 @@
 'use strict';
 
 var my = {};
-var privateVariable = 1;
+var privateVariable = 42;
 
 my.moduleProperty = 1;
 

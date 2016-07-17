@@ -20,7 +20,7 @@
 
       <nav class="main-nav">
         <ul>
-          <li class="main-nav__item">
+          <li class="main-nav__item  main-nav__item--active">
             <a href="#about">About me</a>
           </li>
           <li class="main-nav__item">
@@ -34,16 +34,144 @@
 
     </header>
 
+
+
     <main class="page-main">
 
-      <section class="about"></section>
+      <section class="about">
+        <div class="about__text">
+          <p>My name is Alex, I've graduated from <a href="https://htmlacademy.ru">HTMLAcademy</a> by completing <em>"HTML
+            & CSS advanced"</em> and <em>"JavaScript basic"</em> courses.</p>
+          <p>Instruments and technologies I use: Git, NPM, Gulp, Bower, LESS, Webpack, Emmet, ESLint.</p>
+          <hr class="code-line  code-line--right">
+          <p class="about__skills">Web Developer - Techwriter</p>
+        </div>
+        <div class="about__avatar">
+          <img src="img/avatar.jpg" alt="my avatar" width="250" height="250">
+        </div>
+      </section>
 
-      <section class="portfolio"></section>
 
-      <section class="contact"></section>
+
+      <section class="portfolio">
+
+        <div class="section-heading">
+          <h1>Portfolio</h1>
+          <hr class="code-line  code-line--center">
+        </div>
+
+        <article class="portfolio__item">
+          <a href="https://dl.dropboxusercontent.com/u/55176521/web_dev/projects/sedona/index.html">
+            <img src="img/portfolio-sedona.png" alt="sedona adaptive website" class="portfolio__image" width="420" height="300">
+            <h2 class="portfolio__caption">Sedona</h2>
+          </a>
+        </article>
+
+        <article class="portfolio__item">
+          <a href="https://dl.dropboxusercontent.com/u/55176521/web_dev/projects/code-and-magick/index.html">
+            <img src="img/portfolio-sedona.png" alt="sedona adaptive website" class="portfolio__image" width="420" height="300">
+            <h2 class="portfolio__caption">Code and Magick</h2>
+          </a>
+        </article>
+
+        <article class="portfolio__item">
+          <a href="https://dl.dropboxusercontent.com/u/55176521/web_dev/projects/handy-mary/index.html">
+            <img src="img/portfolio-sedona.png" alt="sedona adaptive website" class="portfolio__image" width="420" height="300">
+            <h2 class="portfolio__caption">Bootstrap Website with Gallery</h2>
+          </a>
+        </article>
+
+        <article class="portfolio__item">
+          <a href="https://dl.dropboxusercontent.com/u/55176521/web_dev/projects/mary-cv/index.html">
+            <img src="img/portfolio-sedona.png" alt="sedona adaptive website" class="portfolio__image" width="420" height="300">
+            <h2 class="portfolio__caption">Simple CV</h2>
+          </a>
+        </article>
+
+        <article class="portfolio__item">
+          <a href="https://dl.dropboxusercontent.com/u/55176521/web_dev/projects/geo-targeting/index.html">
+            <img src="img/portfolio-sedona.png" alt="sedona adaptive website" class="portfolio__image" width="420" height="300">
+            <h2 class="portfolio__caption">Interface Prototype</h2>
+          </a>
+        </article>
+
+        <article class="portfolio__item">
+          <a href="https://dl.dropboxusercontent.com/u/55176521/web_dev/projects/appland/index.html">
+            <img src="img/portfolio-sedona.png" alt="sedona adaptive website" class="portfolio__image" width="420" height="300">
+            <h2 class="portfolio__caption">Mobile App Landing</h2>
+          </a>
+        </article>
+
+      </section>
+
+
+
+      <section class="contact">
+
+        <div class="section-heading">
+          <h1>Contact Me</h1>
+          <hr class="code-line  code-line--center">
+        </div>
+
+        <div class="contact__content">
+
+          <form class="feedback" action="#" method="post" enctype="multipart/form-data">
+
+            <div class="feedback__field">
+              <label class="required__field" for="name">Name:<span>*</span></label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="feedback__field">
+              <label class="required__field" for="email">Email:<span>*</span></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="feedback__field">
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="feedback__field">
+              <label class="required__field" for="message">Message:<span>*</span></label>
+              <textarea name="message" id="message" cols="30" rows="5" required></textarea>
+            </div>
+
+            <div class="feedback__submit">
+              <input class="btn btn--big" type="submit" value="Submit now!">
+            </div>
+
+          </form>
+
+          <div class="contact__reference-text">
+            <p>Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume,
+               tips on how to solve your sudoku, or random questions about the universe and the meaning of life...
+               just feel free to drop me a line anytime.</p>
+            <p>I promise to reply A.S.A.P.</p>
+          </div>
+
+        </div>
+
+      </section>
+
     </main>
 
-    <footer class="page-footer"></footer>
+
+
+    <footer class="page-footer">
+
+      <div class="author">
+        <p>Made with &#128736; by Alex Zi</p>
+      </div>
+
+      <div class="social">
+        <a class="social__btn  social__btn--linkedin" href="https://www.linkedin.com/in/alex-zinchuk-54959947" title="my linkedin" target="_blank"></a>
+        <a class="social__btn  social__btn--gihub" href="https://github.com/VikingRock" title="my github" target="_blank"></a>
+        <a class="social__btn  social__btn--facebook" href="https://www.facebook.com/vikingrockbox" title="my facebook" target="_blank"></a>
+      </div>
+
+    </footer>
+
   </div>
 
   <script src="js/main.min.js"></script>

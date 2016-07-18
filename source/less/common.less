@@ -1,0 +1,43 @@
+html {
+  box-sizing: border-box;
+  font-size: @font-size;
+  font-weight: @font-weight;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  text-align: center;
+  color: @text-color;
+}
+
+h1 {
+  font-size: @font-size--h1;
+  color: @text-color--h1;
+  font-weight: @font-weight--h1;
+  margin: 0 auto 25px;
+}
+
+h2 {
+  font-size: @font-size--h2;
+  color: @text-color--h2;
+  font-weight: @font-weight--h2;
+  margin: 0 auto 30px;
+}
+
+p {
+  line-height: @line-height--text;
+  margin: 0;
+  hyphens: manual;
+}
+
+a {
+  text-decoration: none;
+  color: @bg-color-blue--darkest;
+
+  &:visited {
+    color: @bg-color-blue--darkest;
+  }
+}

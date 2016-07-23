@@ -15,13 +15,15 @@
 
       <div class="logo__wrapper">
         <a href="#">
-          <img class="logo__image" src="img/logo.svg" width="170" alt="VikingRock">
+          <img class="logo__image" src="img/logo.svg" width="180" alt="VikingRock">
         </a>
       </div>
 
       <nav class="main-nav">
 
-        <ul>
+        <a class="main-nav__menu"></a>
+
+        <ul class="invisible">
           <li class="main-nav__item  main-nav__item--active">
             <a href="#about">About me</a>
           </li>
@@ -32,8 +34,6 @@
             <a href="#contact">Contact me</a>
           </li>
         </ul>
-
-        <a class="main-nav__menu"></a>
       </nav>
 
     </header>
@@ -43,7 +43,7 @@
     <main class="page-main">
 
       <section class="about">
-        <div class="about__text">
+        <div class="about__text" id="about">
           <p>My name is Alex, I've graduated from <a href="https://htmlacademy.ru">HTMLAcademy</a> by completing <em>"HTML
             & CSS advanced"</em> and <em>"JavaScript basic"</em> courses.</p>
           <p>Instruments and technologies I use: Git, NPM, Gulp, Bower, LESS, Webpack, Emmet, ESLint.</p>
@@ -57,7 +57,7 @@
 
 
 
-      <section class="portfolio">
+      <section class="portfolio" id="portfolio">
 
         <div class="section-heading">
           <h1>Portfolio</h1>
@@ -110,7 +110,7 @@
 
 
 
-      <section class="contact">
+      <section class="contact" id="contact">
 
         <div class="section-heading">
           <h1>Contact Me</h1>

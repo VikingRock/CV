@@ -1,36 +1,71 @@
 .main-nav {
-  position: relative;
 
   &__menu {
     display: block;
-    width: 40px;
-    height: 30px;
+    width: 60px;
+    height: 45px;
     position: absolute;
-    right: 5px;
-    top: -45px;
+    right: 15px;
+    top: 25px;
     background: url('../img/menu-hamburger.svg') 50% no-repeat;
     background-size: 50%;
     border: 1px solid @bg-color-bege;
     border-radius: 5px;
     z-index: 10;
     text-decoration: none;
+    cursor: pointer;
   }
 
   &__item {
     list-style: none;
     display: block;
     margin: 15px 5px;
-    padding: 10px;
+    padding: 12px 10px 8px;
     font-size: 1.6rem;
     border: 1px solid @bg-color-bege;
     border-radius: 5px;
+    color: @bg-color-bege--darker;
+
+    &:hover {
+      background-color: @bg-color-bege;
+      color: @bg-color-blue;
+    }
+
+    &:active {
+      background-color: @bg-color-bege--darker;
+      color: @bg-color-blue;
+    }
 
     a {
-      color: @bg-color-bege--darker;
+      display: block;
+      color: inherit;
     }
   }
 
   ul {
     padding: 0;
+  }
+
+
+
+
+//========================== tablet ========================
+
+
+  @media(min-width: @screen-md) {
+    flex-grow: 1;
+
+    &__menu {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &__item {
+      margin: 0;
+    }
   }
 }

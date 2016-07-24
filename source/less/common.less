@@ -34,12 +34,10 @@ p {
 }
 
 a {
-  text-decoration: none;
   color: @bg-color-blue--darker;
 
-  &:visited {
-    color: @bg-color-blue--darker;
-  }
+  .link-style();
+
 }
 
 img {
@@ -49,4 +47,17 @@ img {
 
 .invisible {
   display: none;
+}
+
+.scroll-top {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 10;
+  background-color: @bg-color-blue;
+  color: @bg-color-bege;
+  padding: 10px;
+  border: 1px solid @bg-color-bege;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 3px grey;
 }

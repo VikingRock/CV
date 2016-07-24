@@ -9,7 +9,7 @@
   <title>Template</title>
 </head>
 <body>
-  <div class="page-container">
+  <div class="page-container" id="top">
 
     <header class="page-header">
 
@@ -25,7 +25,7 @@
 
         <ul class="invisible">
           <li class="main-nav__item  main-nav__item--active">
-            <a href="#about">About me</a>
+            <a href="#top">About me</a>
           </li>
           <li class="main-nav__item">
             <a href="#portfolio">Portfolio</a>
@@ -43,7 +43,7 @@
     <main class="page-main">
 
       <section class="about">
-        <div class="about__text" id="about">
+        <div class="about__text">
           <p>My name is Alex, I've graduated from <a href="https://htmlacademy.ru">HTMLAcademy</a> by completing <em>"HTML
             & CSS advanced"</em> and <em>"JavaScript basic"</em> courses.</p>
           <p>Instruments and technologies I use: Git, NPM, Gulp, Bower, LESS, Webpack, Emmet, ESLint.</p>
@@ -158,6 +158,10 @@
 
       </section>
 
+      <a class="scroll-top invisible" href="#top">
+        &uarr; Scroll top &uarr;
+      </a>
+
     </main>
 
 
@@ -165,7 +169,7 @@
     <footer class="page-footer">
 
       <div class="author">
-        <p>Made with &#128736; by Alex Zi</p>
+        <p>Made with &#128736; and no frameworks by Alex Zi</p>
       </div>
 
       <div class="social">

@@ -20,24 +20,16 @@
     list-style: none;
     display: block;
     margin: 15px 5px;
-    padding: 12px 10px 8px;
     font-size: 1.6rem;
     border: 1px solid @bg-color-bege;
     border-radius: 5px;
     color: @bg-color-bege--darker;
 
-    &:hover {
-      background-color: @bg-color-bege;
-      color: @bg-color-blue;
-    }
-
-    &:active {
-      background-color: @bg-color-bege--darker;
-      color: @bg-color-blue;
-    }
+    .link-style();
 
     a {
       display: block;
+      padding: 12px 10px 8px;
       color: inherit;
     }
   }

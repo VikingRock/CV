@@ -5,7 +5,9 @@ var Test = require('test');
 var btnHamburger = document.querySelector('.main-nav__menu');
 var mobileMenu = document.querySelector('.main-nav ul');
 var scrollTopBtn = document.querySelector('.scroll-top');
+var chapters = document.querySelectorAll('.toc-chapter');
 var topMenuHeight = 100;
+var scrollDuration = 900;
 var scrollTimeout;
 
 var toggleVisible = function() {
@@ -13,10 +15,12 @@ var toggleVisible = function() {
 };
 
 /**
- * Function shows or hides the Scroll To Top button
+ * Function
+ * - shows or hides the Scroll To Top button
+ * - highlights active chapter
  * depending on the page scroll
  */
-var scrollTopToggle = function() {
+var pageScroll = function() {
 
   clearTimeout(scrollTimeout);
 
@@ -26,6 +30,18 @@ var scrollTopToggle = function() {
     } else {
       scrollTopBtn.classList.add('invisible');
     }
+
+    var currentActive = document.querySelector('.main-nav__item--active');
+    for (var i = 0; i < chapters.length; i++) {
+      var top = chapters[i].getBoundingClientRect().top;
+      if (top > 0) continue;
+      if ( (top === 0) || (top > currentActive.getBoundingClientRect().top) ) {
+        currentActive.classList.remove('main-nav__item--active');
+        currentActive = mobileMenu.children[i];
+      }
+    }
+    currentActive.classList.add('main-nav__item--active');
+
   }, 100);
 };
 
@@ -47,6 +63,10 @@ var scrollTo = function (element, to, duration) {
   }, 10);
 };
 
+/**
+ * Function fires scrollTo function for target element
+ * @param event
+ */
 var scrollToAnchor = function(event) {
   event.preventDefault();
   var target = event.target;
@@ -63,13 +83,13 @@ var scrollToAnchor = function(event) {
     var element = document.body;
   }
 
-  scrollTo(element, to.offsetTop - topMenuHeight, 900);
+  scrollTo(element, to.offsetTop - topMenuHeight, scrollDuration);
   mobileMenu.classList.add('invisible');
 };
 
 btnHamburger.addEventListener('click', toggleVisible);
 
-window.addEventListener('scroll', scrollTopToggle);
+window.addEventListener('scroll', pageScroll);
 
 mobileMenu.addEventListener('click', scrollToAnchor);
 scrollTopBtn.addEventListener('click', scrollToAnchor);

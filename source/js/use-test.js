@@ -6,42 +6,56 @@ var btnHamburger = document.querySelector('.main-nav__menu');
 var mobileMenu = document.querySelector('.main-nav ul');
 var scrollTopBtn = document.querySelector('.scroll-top');
 var chapters = document.querySelectorAll('.toc-chapter');
-var topMenuHeight = 100;
-var scrollDuration = 900;
+var TOP_MENU_HEIGHT = 100;
+var SCROLL_DURATION = 900;
 var scrollTimeout;
 
-var toggleVisible = function() {
-  mobileMenu.classList.toggle('invisible');
+/**
+ * Function shows or hides the Scroll To Top button
+ */
+var scrollSpy = function() {
+  if (window.scrollY > TOP_MENU_HEIGHT || document.documentElement.scrollTop > TOP_MENU_HEIGHT) {
+    scrollTopBtn.classList.remove('invisible');
+  } else {
+    scrollTopBtn.classList.add('invisible');
+  }
 };
 
 /**
- * Function
- * - shows or hides the Scroll To Top button
- * - highlights active chapter
- * depending on the page scroll
+ * Function highlights Active nav link,
+ * which chapter content is the closest to the page top
+ */
+var highlightActiveChapter = function() {
+  var activeChapter = chapters[0];
+  var activeLink = mobileMenu.children[0];
+  activeLink.classList.remove('main-nav__item--active');
+
+  for (var i = 1; i < chapters.length; i++) {
+    var top = chapters[i].getBoundingClientRect().top;
+    mobileMenu.children[i].classList.remove('main-nav__item--active');
+    if (top > TOP_MENU_HEIGHT) continue;
+    if ( (top === TOP_MENU_HEIGHT) ||
+      (top > activeChapter.getBoundingClientRect().top + TOP_MENU_HEIGHT) ) {
+      activeLink = mobileMenu.children[i];
+      activeChapter = chapters[i];
+    }
+  }
+  activeLink.classList.add('main-nav__item--active');
+};
+
+/**
+ * Function activates
+ * - scrollSpy()
+ * - highlightActiveChapter()
+ * in 100 milliseconds after scrolling ends
  */
 var pageScroll = function() {
 
   clearTimeout(scrollTimeout);
 
   scrollTimeout = setTimeout( function() {
-    if (window.scrollY > 100 || document.documentElement.scrollTop > 100) {
-      scrollTopBtn.classList.remove('invisible');
-    } else {
-      scrollTopBtn.classList.add('invisible');
-    }
-
-    var currentActive = document.querySelector('.main-nav__item--active');
-    for (var i = 0; i < chapters.length; i++) {
-      var top = chapters[i].getBoundingClientRect().top;
-      if (top > 0) continue;
-      if ( (top === 0) || (top > currentActive.getBoundingClientRect().top) ) {
-        currentActive.classList.remove('main-nav__item--active');
-        currentActive = mobileMenu.children[i];
-      }
-    }
-    currentActive.classList.add('main-nav__item--active');
-
+    scrollSpy();
+    highlightActiveChapter();
   }, 100);
 };
 
@@ -84,11 +98,13 @@ var scrollToAnchor = function(event) {
     var element = document.body;
   }
 
-  scrollTo(element, to.offsetTop - topMenuHeight, scrollDuration);
+  scrollTo(element, to.offsetTop - TOP_MENU_HEIGHT, SCROLL_DURATION);
   mobileMenu.classList.add('invisible');
 };
 
-btnHamburger.addEventListener('click', toggleVisible);
+btnHamburger.addEventListener('click', function() {
+  mobileMenu.classList.toggle('invisible');
+});
 
 window.addEventListener('scroll', pageScroll);
 

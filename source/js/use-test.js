@@ -25,7 +25,7 @@ var pageScroll = function() {
   clearTimeout(scrollTimeout);
 
   scrollTimeout = setTimeout( function() {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 100 || document.documentElement.scrollTop > 100) {
       scrollTopBtn.classList.remove('invisible');
     } else {
       scrollTopBtn.classList.add('invisible');
@@ -76,8 +76,9 @@ var scrollToAnchor = function(event) {
   anchor = anchor.substr(1);
   var to = document.getElementById(anchor);
 
-  //hack to make this shit work in FF
-  if (document.documentElement.scrollTop++) {
+  //hack to make this shit work in FF an IE
+  document.documentElement.scrollTop+=1;
+  if (document.documentElement.scrollTop) {
     var element = document.documentElement
   } else {
     var element = document.body;

@@ -1,0 +1,16 @@
+.code-line {
+  margin: 45px auto 30px;
+  position: relative;
+  border-top: solid 4px;
+  color: rgba(128, 128, 128, 0.18);
+
+  &::after {
+    content: '${...}';
+    position: absolute;
+    .centralize-absolute-el();
+    top: -28px;
+    background-color: @bg-color-bege;
+    padding: 0 10px;
+    font-size: 3rem;
+  }
+}

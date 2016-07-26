@@ -1,0 +1,46 @@
+.about {
+  font-size: 1.8rem;
+  padding: 15px;
+  color: @text-color--h1;
+
+  &__text {
+    font-size: inherit;
+  }
+
+  &__avatar {
+    img {
+      margin: 25px auto 0;
+      border-radius: 30%;
+    }
+  }
+
+  a {
+    font-weight: 400;
+  }
+
+
+
+//========================== tablet ========================
+
+
+
+  @media(min-width: @screen-md) {
+    display: flex;
+    flex-wrap: nowrap;
+
+    &__text {
+      flex-grow: 1;
+      text-align: left;
+      padding-right: 30px;
+    }
+
+    &__avatar {
+      flex-grow: 1;
+      flex-shrink: 0;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+}

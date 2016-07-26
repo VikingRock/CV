@@ -1,5 +1,25 @@
 .portfolio {
+  background-color: @bg-color-blue--darker;
+  padding: 1px 10% 20px;
+
+  &__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  &__item {
+    flex-grow: 0;
+    flex-basis: 400px;
+  }
+
   &__image {
-    box-shadow: 0 0 5px @bg-color-blue--darker;
+    box-shadow: 0 0 7px 3px @bg-color-bege;
+    border-radius: 5px;
+  }
+
+  h2 {
+    padding-top: 10px;
+    font-weight: 100;
   }
 }

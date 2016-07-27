@@ -14,8 +14,14 @@
   }
 
   &__image {
-    box-shadow: 0 0 7px 3px @bg-color-bege;
+    //box-shadow: 0 0 7px 3px @bg-color-bege;
+    border: 1px solid @bg-color-bege;
     border-radius: 5px;
+
+    &:hover {
+      box-shadow: 0 0 10px 5px @bg-color-bege;
+      transform: translateY(-3px);
+    }
   }
 
   h2 {

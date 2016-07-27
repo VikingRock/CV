@@ -1,0 +1,43 @@
+.feedback {
+  text-align: left;
+
+  &__field {
+    padding-top: 30px;
+
+    input, textarea {
+      background-color: transparent;
+      border: 2px solid @bg-color-blue--darker;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      color: @bg-color-blue--darker;
+      font-weight: 400;
+      font-size: 1.6rem;
+
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__submit {
+    padding: 30px 0;
+
+    .btn {
+      padding: 15px;
+      border-radiust:5px;
+      background: @bg-color-blue--darker;
+      color: white;
+
+      &:hover {
+        background: @bg-color-blue;
+      }
+    }
+  }
+
+  label {
+    display: block;
+    font-size: 2rem;
+  }
+}

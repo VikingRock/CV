@@ -2,15 +2,17 @@
   margin: 45px auto 30px;
   position: relative;
   border-top: solid 4px;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
   color: @bg-color-blue--darker;
 
   &::after {
     content: '${...}';
     position: absolute;
     .centralize-absolute-el();
-    top: -28px;
     background-color: @bg-color-bege;
-    padding: 0 10px;
+    padding: 0 10px 4px;
     font-size: 3rem;
   }
 }

@@ -1,5 +1,6 @@
 .feedback {
   text-align: left;
+  padding-right: 15px;
 
   &__field {
     padding-top: 30px;
@@ -16,25 +17,30 @@
 
 
       &:focus {
-        outline: none;
+        outline: 2px solid @bg-color-blue;
         color: @bg-color-blue;
-        border: 2px solid @bg-color-blue;
       }
     }
   }
 
   &__submit {
     padding: 30px 0;
-    font-size: 3rem;
+    font-size: 2rem;
 
     .btn {
       padding: 15px;
-      border-radiust:5px;
+      border-radius:5px;
       background: @bg-color-blue--darker;
-      color: white;
+      color: @bg-color-bege;
+      border: none;
 
       &:hover {
         background: @bg-color-blue;
+      }
+
+      &:focus {
+        outline: 1px solid @bg-color-blue;
+        color: @bg-color-blue;
       }
     }
   }

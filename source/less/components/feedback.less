@@ -6,7 +6,7 @@
 
     input, textarea {
       background-color: transparent;
-      border: 2px solid @bg-color-blue--darker;
+      border: 1px solid @bg-color-blue--darker;
       border-top: none;
       border-left: none;
       border-right: none;
@@ -17,12 +17,15 @@
 
       &:focus {
         outline: none;
+        color: @bg-color-blue;
+        border: 2px solid @bg-color-blue;
       }
     }
   }
 
   &__submit {
     padding: 30px 0;
+    font-size: 3rem;
 
     .btn {
       padding: 15px;

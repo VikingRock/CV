@@ -2,20 +2,29 @@
 
   &__btn {
 
-    display: block;
+    display: inline-block;
     width: 40px;
     height: 40px;
+    border-radius: 5%;
+
+    &--linkedin {
+      background-image: url('../img/social-linkedin.svg');
+    }
 
     &--github {
       background-image: url('../img/social-github.svg');
+      border-radius: 50%;
+      margin: 0 5px;
     }
 
     &--facebook {
       background-image: url('../img/social-facebook.svg');
     }
 
-    &--linkedin {
-      background-image: url('../img/social-linkedin.svg');
+    &:hover {
+      background-color: @bg-color-blue;
+      box-shadow: 0 0 10px 5px @bg-color-bege;
+      transform: translateY(-3px);
     }
   }
 }

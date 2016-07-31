@@ -1,7 +1,5 @@
 'use strict';
 
-var Test = require('test');
-
 var btnHamburger = document.querySelector('.main-nav__menu');
 var mobileMenu = document.querySelector('.main-nav ul');
 var scrollTopBtn = document.querySelector('.scroll-top');
